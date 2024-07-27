@@ -1,0 +1,76 @@
+RewriteEngine on
+
+RewriteRule ^/?$ index.php?open=Views/Web/Home/index.php
+RewriteRule ^ar/?$ index.php?open=Views/Web/Home/index.php&&ar=true
+
+#login
+RewriteRule ^Login/?$ index.php?admin_login=Views/Admin/login/login.php
+RewriteRule ^login/?$ index.php?admin_login=Views/Admin/login/login.php
+
+RewriteRule ^Enter/?$ index.php?Controller=Controllers/Admin/login/index.php&&allow=true
+
+
+#logout
+RewriteRule ^logout/?$ index.php?Controller=Controllers/Admin/logout/logout.php
+
+
+#profile
+RewriteRule ^Home/?$ index.php?admin=Views/Admin/profile/profile.php
+RewriteRule ^home/?$ index.php?admin=Views/Admin/profile/profile.php
+RewriteRule ^my_profile/?$ index.php?admin=Views/Admin/profile/profile.php
+RewriteRule ^profile/?$ index.php?Controller=Controllers/Admin/profile/index.php
+
+
+#Comments
+RewriteRule ^sub_commit/?$ index.php?Controller=Controllers/Web/Connect/index.php&&allow=true
+RewriteRule ^Comments/?$ index.php?admin=Views/Admin/comments/index.php
+RewriteRule ^Comments/p=([0-9أ-يa-zA-Z_.]+)?$ index.php?admin=Views/Admin/comments/index.php&page=$1
+
+RewriteRule ^Comments/Del=([0-9أ-يa-zA-Z_.]+)?$ index.php?Controller=Controllers/Admin/comments/index.php&Del=$1
+
+#template
+RewriteRule ^template/([0-9أ-يa-zA-Z_.]+)?$ index.php?open=Views/Web/template/$1.php&&route=$1&&allow=true
+RewriteRule ^ar/template/([0-9أ-يa-zA-Z_.]+)?$ index.php?open=Views/Web/template/$1.php&&route=$1&&allow=true&&ar=true
+
+#Pages
+RewriteRule ^ar/page/([0-9أ-يa-zA-Z_.]+)?$ index.php?open=Views/Web/pages/page.php&&route=$1&&allow=true&&ar=true
+
+
+RewriteRule ^pages/?$ index.php?admin=Views/Admin/pages/index.php
+RewriteRule ^admin/pages/save?$ index.php?Controller=Controllers/Admin/pages/index.php
+RewriteRule ^admin/pages/Del=([0-9أ-يa-zA-Z_.]+)?$ index.php?Controller=Controllers/Admin/pages/index.php&Del=$1
+
+#service
+RewriteRule ^service/?$ index.php?admin=Views/Admin/service/index.php
+RewriteRule ^service/p=([0-9أ-يa-zA-Z_.]+)?$ index.php?admin=Views/Admin/service/index.php&page=$1
+
+RewriteRule ^service/Del=([0-9أ-يa-zA-Z_.]+)?$ index.php?Controller=Controllers/Admin/service/index.php&Del=$1
+RewriteRule ^service/save?$ index.php?Controller=Controllers/Admin/service/index.php
+
+#Producted
+RewriteRule ^admin/product/?$ index.php?admin=Views/Admin/service/index.php
+RewriteRule ^admin/product/p=([0-9أ-يa-zA-Z_.]+)?$ index.php?admin=Views/Admin/service/index.php&page=$1
+
+RewriteRule ^admin/product/Del=([0-9أ-يa-zA-Z_.]+)?$ index.php?Controller=Controllers/Admin/service/index.php&Del=$1
+RewriteRule ^admin/product/save?$ index.php?Controller=Controllers/Admin/service/index.php
+
+#info_web
+RewriteRule ^info_web/?$ index.php?admin=Views/Admin/info_web/index.php
+
+RewriteRule ^info_web/save?$ index.php?Controller=Controllers/Admin/info_web/index.php
+
+
+#gallery
+RewriteRule ^gallery/?$ index.php?admin=Views/Admin/gallery/index.php
+RewriteRule ^gallery/p=([0-9أ-يa-zA-Z_.]+)?$ index.php?admin=Views/Admin/gallery/index.php&page=$1
+RewriteRule ^gallery/Del=([0-9أ-يa-zA-Z_.]+)?$ index.php?Controller=Controllers/Admin/gallery/index.php&Del=$1
+RewriteRule ^gallery/save?$ index.php?Controller=Controllers/Admin/gallery/index.php
+
+
+#Install
+RewriteRule ^Install/?$ index.php?Install=Controllers/Admin/install/index.php
+
+
+
+
+AddCharset UTF-8 .html
